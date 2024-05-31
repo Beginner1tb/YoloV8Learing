@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YoloV8Test2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300" />
@@ -65,6 +65,8 @@
                     <TextBlock x:Name="TB_InferTime" FontSize="20" />
                     <TextBlock FontSize="20" Text="ms" />
                 </StackPanel>
+                <TextBlock Text="推理结果：" FontSize="15"/>
+                <ListView x:Name="LV_Result" FontSize="15" Height="100"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Column="1">

@@ -86,6 +86,18 @@ namespace YoloV8Test2
                 var predictions = predictor.Predict(image, useNumpy: false);
                 stopwatch.Stop();
 
+                //显示结果
+                LV_Result.ItemsSource = null;
+                List<string> results = new List<string>();
+                int i = 0;
+                foreach (var prediction in predictions)
+                {
+                    i++;
+                    results.Add("对象" + i.ToString() + " 名称：" + prediction.Label.Name);
+
+                }
+                LV_Result.ItemsSource = results;
+
                 var timespan = stopwatch.ElapsedMilliseconds;
                 TB_InferTime.Dispatcher.Invoke(new Action(() =>
                 {
@@ -97,7 +109,7 @@ namespace YoloV8Test2
                 Image _imageField = DrawBoxes.DrawBox(image, predictions);
                 BitmapImage bitmapImage = ConvertToBitmapImage(_imageField);
 
-                //界面显示结果
+                //界面显示图片结果
                 img.Source = bitmapImage;
 
 

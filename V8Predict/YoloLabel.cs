@@ -12,6 +12,6 @@ namespace V8Predict
         
         public Color Color { get; set; }
 
-        public YoloLabel() => Color = Color.Yellow;
+        public YoloLabel() => Color = Color.Red;
     }
 }
